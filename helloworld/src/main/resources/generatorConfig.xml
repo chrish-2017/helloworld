@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+  <!-- 数据库驱动包位置 -->  
+  <classPathEntry  
+      location="D:\maven-repository\mysql\mysql-connector-java\5.1.30\mysql-connector-java-5.1.30.jar" />
+  <context id="context1" >
+    <commentGenerator>
+        <property name="javaFileEncoding" value="UTF-8" />
+        <!-- 是否去除自动生成的注释 true：是 ， false：否 -->
+        <property name="suppressAllComments" value="true"/>
+        <!-- true代表取消时间戳，避免重复提交SVN -->
+        <property name="suppressDate" value="true"/>
+    </commentGenerator>
+    <!-- 数据库链接URL、用户名、密码 -->
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/test?allowMultiQueries=true&amp;useUnicode=true&amp;characterEncoding=UTF-8" userId="root" password="" />
+    <!-- 生成模型的包名和位置 -->
+    <javaModelGenerator targetPackage="test.helloworld.web.bean" targetProject="helloworld/src/main/java" />
+    <!-- 生成映射文件的包名和位置 -->
+    <sqlMapGenerator targetPackage="test.helloworld.web.mapper.sql" targetProject="helloworld/src/main/java" />
+    <!-- 生成DAO的包名和位置 -->
+    <javaClientGenerator targetPackage="test.helloworld.web.mapper" targetProject="helloworld/src/main/java" type="XMLMAPPER" />
+    <!-- 要生成的表(tableName：表名 ，domainObjectName：生成的文件主名。 如下，会生成BabyVisitRecord.java，BabyVisitRecordMapper.java，BabyVisitRecordMapper.xml) -->
+    <!-- 5个false是为了去掉ByExample后缀的方法 -->
+    <table schema="ssm1" tableName="upload_info" domainObjectName="uploadInfo" 
+    enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+    </table>
+  </context>
+</generatorConfiguration>

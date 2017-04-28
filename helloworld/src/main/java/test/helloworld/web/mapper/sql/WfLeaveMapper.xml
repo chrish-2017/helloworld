@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test.helloworld.web.mapper.WfLeaveMapper">
+
+	<!--  列表查询返回字段
+    <resultMap id="WfLeave" type="test.helloworld.web.bean.WfLeave">
+    <result property="leaveid" column="LEAVEID" />
+    <result property="name" column="NAME" />
+    <result property="leaveCount" column="LEAVECOUNT" jdbcType="INTEGER"/>
+    <result property="leaveReason" column="LEAVEREASON" />
+    <result property="instanceid" column="INSTANCEID" />
+    </resultMap>
+     <sql id="WfLeavecolumns">
+        <![CDATA[
+         LEAVEID,
+         NAME,
+         LEAVECOUNT,
+         LEAVEREASON,
+         INSTANCEID
+          ]]>
+    </sql>
+    表新增
+    <insert id="insertWfLeave" parameterType="test.helloworld.web.bean.WfLeave">
+        <![CDATA[
+        INSERT INTO WF_LEAVE(
+         LEAVEID,
+         NAME,
+         LEAVECOUNT,
+         LEAVEREASON,
+         INSTANCEID
+         )VALUES(
+         #{leaveid},
+         #{name},
+         #{leaveCount},
+         #{leaveReason},
+         #{instanceid}
+         )
+          ]]>
+    </insert>
+    删除
+    <delete id="delWfLeave" parameterType="string">
+        DELETE FROM WF_LEAVE WHERE LEAVEID = #{leaveid}        
+    </delete>
+    修改
+    <update id="updateWfLeave" parameterType="test.helloworld.web.bean.WfLeave">
+         UPDATE WF_LEAVE set
+         INSTANCEID=#{instanceid}
+          WHERE
+               	LEAVEID = #{leaveid}    
+    </update>
+    
+     表查询ById
+    <select id="getById"  resultMap="WfLeave">
+        SELECT <include refid="WfLeavecolumns"/>
+        <![CDATA[
+             FROM WF_LEAVE         ]]>
+     </select>
+     
+    <select id="findByEntity" parameterType="test.helloworld.web.bean.WfLeave" resultMap="WfLeave" >
+		SELECT * FROM WF_LEAVE
+	</select>
+     
+    <select id="findByInstanceid" parameterType="string" resultMap="WfLeave" >
+		SELECT * FROM WF_LEAVE WHERE INSTANCEID = #{instanceid}
+	</select> -->
+	
+     
+</mapper>
